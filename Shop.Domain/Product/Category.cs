@@ -8,6 +8,6 @@ namespace Shop.Domain.Product
 
         public int Name { get; set; }
 
-        public virtual List<Product> Products { get; set; }
+        public List<Product> Products { get; set; }
     }
 }

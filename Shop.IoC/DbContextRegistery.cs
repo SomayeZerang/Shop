@@ -10,9 +10,9 @@ namespace Shop.IoC
         {
             For<IUnitOfWork>().Use("ShopDbContext");
 
-            For<ShopDbContext>().Use("ShopDbContext");
+            For<ShopDbContext>().Use("IUnitOfWork");
 
-            For<DbContext>().Use("ShopDbContext");
+            For<DbContext>().Use("IUnitOfWork");
         }
     }
 }
