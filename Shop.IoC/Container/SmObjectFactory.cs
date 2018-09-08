@@ -4,6 +4,7 @@ using Shop.Service.Product;
 using StructureMap;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Shop.Domain.Identity;
+using Shop.IoC.Identity;
 
 namespace Shop.IoC.Container
 {
@@ -26,6 +27,7 @@ namespace Shop.IoC.Container
                 });
 
                 x.AddRegistry<DbContextRegistery>();
+                x.AddRegistry<IdentityRegistery>();
             });
 
             return container;
