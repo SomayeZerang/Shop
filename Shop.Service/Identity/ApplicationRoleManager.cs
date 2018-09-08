@@ -4,7 +4,7 @@ using Shop.Domain.Identity;
 
 namespace Shop.Service.Identity
 {
-    public class ApplicationRoleManager : RoleManager<Role, Guid>
+    public class ApplicationRoleManager : RoleManager<Role, Guid> , IApplicationRoleManager
     {
         public ApplicationRoleManager(IRoleStore<Role, Guid> store) : base(store)
         {

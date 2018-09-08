@@ -6,12 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Shop.Domain.Identity;
+using Shop.Domain.Product;
 
 namespace Shop.Data.Context
 {
     public class ShopDbContext : IdentityDbContext<User,Role,Guid,UserLogins,UserRoles,UserClaims>, IUnitOfWork
-
     {
+        public ShopDbContext(): base("Db_AppShop")
+        {
+            
+        }
         public void SaveChangeAsync()
         {
             SaveChangeAsync();
@@ -26,5 +30,9 @@ namespace Shop.Data.Context
         {
             return base.Set<TEntity>();
         }
+
+        public IDbSet<Category> Categories { get; set; }
+
+        public IDbSet<Product> Products { get; set; }
     }
 }

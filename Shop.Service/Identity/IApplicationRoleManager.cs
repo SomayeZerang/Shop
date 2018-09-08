@@ -15,8 +15,8 @@ namespace Shop.Service.Identity
 
         Task<Role> FindByNameAsync(string roleName);
 
-        Task<List<Role>> GetRolesAsync();
+        //Task<List<Role>> GetRolesAsync();
 
-        void Seed();
+        //void Seed();
     }
 }
