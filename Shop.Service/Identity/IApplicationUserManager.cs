@@ -15,6 +15,8 @@ namespace Shop.Service.Identity
         Task<IdentityResult> ChangePasswordAsync(Guid userId, string currentPassword, string newPassword);
         Task<IdentityResult> ChangePhoneNumberAsync(Guid userId, string phoneNumber, string token);
 
+        Func<CookieValidateIdentityContext, Task> OnValidateIdentity();
+
         //Task<IdentityResult> ResetPasswordAsync(Guid userId, string token, string newPassword);
 
         //Task<string> GeneratePasswordResetTokenAsync(Guid userId);        

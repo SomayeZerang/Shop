@@ -44,6 +44,9 @@
     <Compile Include="Connections\IEmailService.cs" />
     <Compile Include="Connections\ISmsService.cs" />
     <Compile Include="Connections\SmsService.cs" />
+    <Compile Include="Dtos\BaseDto.cs" />
+    <Compile Include="Dtos\Product\ProductDto.cs" />
+    <Compile Include="Dtos\User\RegisterUserDto.cs" />
     <Compile Include="Identity\ApplicationRoleManager.cs" />
     <Compile Include="Identity\ApplicationSignInManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
@@ -75,13 +78,15 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Shop.Data\Shop.Data.csproj">
+      <Project>{86441E71-B3CB-43FF-9DE9-8E685AE71970}</Project>
+      <Name>Shop.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shop.Domain\Shop.Domain.csproj">
       <Project>{37f336ed-f8c4-4403-8db4-4b7aade8e129}</Project>
       <Name>Shop.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dtos\Product\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
