@@ -47,11 +47,13 @@
     <Compile Include="Identity\ApplicationRoleManager.cs" />
     <Compile Include="Identity\ApplicationSignInManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
+    <Compile Include="Identity\CustomRoleStore.cs" />
     <Compile Include="Identity\ICustomRoleStore.cs" />
     <Compile Include="Identity\IApplicationRoleManager.cs" />
     <Compile Include="Identity\IApplicationSignInManager.cs" />
     <Compile Include="Identity\IApplicationUserManager.cs" />
     <Compile Include="Identity\ICustomUserStore.cs" />
+    <Compile Include="Identity\CustomeUserStore.cs" />
     <Compile Include="Product\CategoryService.cs" />
     <Compile Include="Product\ICategoryService.cs" />
     <Compile Include="Product\IProductService.cs" />
