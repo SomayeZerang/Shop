@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security.Cookies;
 using Shop.Domain.Identity;
+using Shop.Service.Dtos.User;
 
 namespace Shop.Service.Identity
 {
@@ -17,6 +18,8 @@ namespace Shop.Service.Identity
 
         Func<CookieValidateIdentityContext, Task> OnValidateIdentity();
 
+        Task Register(RegisterUserDto userDto);
+
         //Task<IdentityResult> ResetPasswordAsync(Guid userId, string token, string newPassword);
 
         //Task<string> GeneratePasswordResetTokenAsync(Guid userId);        
@@ -27,7 +30,7 @@ namespace Shop.Service.Identity
 
         //Task<ClaimsIdentity> GenerateUserIdentityAsync(User user);
         //Task<IdentityResult> AddLoginAsync(Guid userId, UserLoginInfo login);
-       
+
         //Task<bool> IsEmailConfirmedAsync(Guid userId);
 
         //Task<User> FindByEmailAsync(string email);
@@ -71,7 +74,7 @@ namespace Shop.Service.Identity
         //Task UpdatePlayerIdAsync(Guid userId, string playerId);
 
         //Task<string> UpdateAvatarAsync(Guid userId, string imageName);       
-        
+
         //Task<User> FindCustomerAsync(string phoneNumber);
     }
 }
