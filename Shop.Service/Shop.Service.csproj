@@ -46,6 +46,7 @@
     <Compile Include="Connections\SmsService.cs" />
     <Compile Include="Dtos\BaseDto.cs" />
     <Compile Include="Dtos\Product\ProductDto.cs" />
+    <Compile Include="Dtos\User\RegisterUserDto.cs" />
     <Compile Include="Identity\ApplicationRoleManager.cs" />
     <Compile Include="Identity\ApplicationSignInManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
