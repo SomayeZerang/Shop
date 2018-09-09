@@ -3,7 +3,7 @@ using AutoMapper;
 
 namespace Shop.Service.Dtos.User
 {
-    public class RegisterUserDto : BaseDto<Guid>, IMapper<Domain.Identity.User>
+    public class RegisterUserDto : BaseDto<Guid>
     {
         public string Email { get; set; }
 

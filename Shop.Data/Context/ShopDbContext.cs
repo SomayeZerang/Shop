@@ -16,14 +16,14 @@ namespace Shop.Data.Context
         {
             
         }
-        public void SaveChangeAsync()
+        public Task SaveChangeAsync()
         {
-            SaveChangeAsync();
+            return SaveChangeAsync();
         }
 
-        public void SaveChange()
+        public Task SaveChange()
         {
-            SaveChange();
+            return SaveChange();
         }
 
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class

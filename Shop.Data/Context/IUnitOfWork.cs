@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Xml;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Shop.Domain.Identity;
@@ -10,9 +11,9 @@ namespace Shop.Data.Context
     public interface IUnitOfWork
 
     {
-        void SaveChangeAsync();
+        Task SaveChangeAsync();
 
-        void SaveChange();
+        Task SaveChange();
 
         IDbSet<TEntity> Set<TEntity>() where TEntity : class;
 

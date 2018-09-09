@@ -32,7 +32,9 @@ namespace Shop.Service.Identity
         {
             var user = _mapper.Map<User>(userDto);
 
-            _unitOfWork.
+            _unitOfWork.Added(userDto);
+
+            return _unitOfWork.SaveChangeAsync();
         }
     }
 }
