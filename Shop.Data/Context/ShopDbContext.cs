@@ -31,6 +31,21 @@ namespace Shop.Data.Context
             return base.Set<TEntity>();
         }
 
+        public void Added<TEntity>(TEntity entity) where TEntity : class
+        {
+            Entry(entity).State = EntityState.Added;
+        }
+
+        public void Modifierd<TEntity>(TEntity entity) where TEntity : class
+        {
+            Entry(entity).State = EntityState.Modified;
+        }
+
+        public void Deleted<TEntity>(TEntity entity) where TEntity : class
+        {
+            Entry(entity).State = EntityState.Deleted;
+        }
+
         public IDbSet<Category> Categories { get; set; }
 
         public IDbSet<Product> Products { get; set; }

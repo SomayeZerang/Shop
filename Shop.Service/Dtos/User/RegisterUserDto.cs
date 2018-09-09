@@ -1,8 +1,9 @@
 ﻿using System;
+using AutoMapper;
 
 namespace Shop.Service.Dtos.User
 {
-    public class RegisterUserDto : BaseDto<Guid>
+    public class RegisterUserDto : BaseDto<Guid>, IMapper<Domain.Identity.User>
     {
         public string Email { get; set; }
 
