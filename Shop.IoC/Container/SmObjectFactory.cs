@@ -5,6 +5,7 @@ using StructureMap;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Shop.Domain.Identity;
 using Shop.IoC.Identity;
+using Shop.IoC.Mapping;
 
 namespace Shop.IoC.Container
 {
@@ -26,8 +27,11 @@ namespace Shop.IoC.Container
                     scanner.WithDefaultConventions();
                 });
 
+                
+
                 x.AddRegistry<DbContextRegistery>();
                 x.AddRegistry<IdentityRegistery>();
+                x.AddRegistry<MappingRegister>();
             });
 
             return container;

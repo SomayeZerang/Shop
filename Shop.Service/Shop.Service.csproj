@@ -57,6 +57,7 @@
     <Compile Include="Identity\IApplicationUserManager.cs" />
     <Compile Include="Identity\ICustomUserStore.cs" />
     <Compile Include="Identity\CustomeUserStore.cs" />
+    <Compile Include="Mapping\IMapping.cs" />
     <Compile Include="Product\CategoryService.cs" />
     <Compile Include="Product\ICategoryService.cs" />
     <Compile Include="Product\IProductService.cs" />

@@ -8,7 +8,7 @@ using Shop.Domain.Identity;
 
 namespace Shop.Data.Context
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
 
     {
         Task SaveChangeAsync();

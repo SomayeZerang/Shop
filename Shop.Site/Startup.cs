@@ -37,6 +37,7 @@ namespace Shop.Site
             app.CreatePerOwinContext(() => (ApplicationSignInManager)SmObjectFactory
                 .Container.GetInstance<IApplicationSignInManager>());
 
+
             app.UseCookieAuthentication(new CookieAuthenticationOptions()
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,

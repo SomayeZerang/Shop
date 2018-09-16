@@ -47,6 +47,7 @@
     <Compile Include="Container\SmObjectFactory.cs" />
     <Compile Include="DbContextRegistery.cs" />
     <Compile Include="Identity\IdentityRegistery.cs" />
+    <Compile Include="Mapping\MappingRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

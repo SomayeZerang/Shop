@@ -18,7 +18,9 @@ namespace Shop.Service.Identity
 
         Func<CookieValidateIdentityContext, Task> OnValidateIdentity();
 
-        Task Register(RegisterUserDto userDto);
+        Task RegisterAsync(RegisterUserDto userDto);
+
+        Task<ClaimsIdentity> GenerateUserIdentityAsync(User user);
 
         //Task<IdentityResult> ResetPasswordAsync(Guid userId, string token, string newPassword);
 

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Shop.Data.Context;
 using Shop.Domain.Identity;
@@ -25,14 +27,22 @@ namespace Shop.Service.Identity
 
         public Func<CookieValidateIdentityContext, Task> OnValidateIdentity()
         {
-            throw new NotImplementedException();
+            return SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, User, Guid>
+            (TimeSpan.FromMinutes(1), (manager, user) => GenerateUserIdentityAsync(user),
+                identity => Guid.Parse(identity.GetUserId()));
         }
 
-        public Task Register(RegisterUserDto userDto)
+        public Task<ClaimsIdentity> GenerateUserIdentityAsync(User user)
+        {
+            var claimsIdentity = CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
+            return claimsIdentity;
+        }
+
+        public Task RegisterAsync(RegisterUserDto userDto)
         {
             var user = _mapper.Map<User>(userDto);
 
-            _unitOfWork.Added(userDto);
+            _unitOfWork.Added(user);
 
             return _unitOfWork.SaveChangeAsync();
         }

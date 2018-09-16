@@ -4,7 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using AutoMapper;
+using Shop.Domain.Identity;
 using Shop.IoC.Container;
+using Shop.Service.Dtos.User;
 using StructureMap.Web.Pipeline;
 
 namespace Shop.Site
@@ -17,6 +20,12 @@ namespace Shop.Site
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             ControllerBuilder.Current.SetControllerFactory(new StructureMapControllerFactory());
+
+            //Mapper.Initialize(cfg =>
+            //{
+            //    cfg.AddProfile<>();
+            //    cfg.CreateMap<User, RegisterUserDto>();
+            //});
         }
 
         private class StructureMapControllerFactory : DefaultControllerFactory

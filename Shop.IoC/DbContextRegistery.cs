@@ -8,11 +8,12 @@ namespace Shop.IoC
     {
         public DbContextRegistery()
         {
-            For<IUnitOfWork>().Use("ShopDbContext");
+            For<IUnitOfWork>().Use<ShopDbContext>();
 
-            For<ShopDbContext>().Use("IUnitOfWork");
+            For<ShopDbContext>()
+                .Use(context => (ShopDbContext)context.GetInstance<IUnitOfWork>());
 
-            For<DbContext>().Use("IUnitOfWork");
+            For<DbContext>().Use(x => (ShopDbContext)x.GetInstance<IUnitOfWork>());
         }
     }
 }
